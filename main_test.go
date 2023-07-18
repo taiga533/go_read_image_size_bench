@@ -34,14 +34,14 @@ func TestReadPngHeader(t *testing.T) {
 	defer f.Close()
 
 	pngHeader, err := ReadPngHeader(f)
-	if pngHeader.Width != 7000 {
-		t.Errorf("ReadPngHeader() error = %v", pngHeader.Width)
-	}
-	if pngHeader.Height != 7000 {
-		t.Errorf("ReadPngHeader() error = %v", pngHeader.Height)
-	}
 	if err != nil {
 		t.Errorf("ReadPngHeader() error = %v", err)
+	}
+	if pngHeader.Width != 7000 {
+		t.Errorf("ReadPngHeader() pngHeader.Width = %v", pngHeader.Width)
+	}
+	if pngHeader.Height != 7000 {
+		t.Errorf("ReadPngHeader() pngHeader.Height = %v", pngHeader.Height)
 	}
 }
 
